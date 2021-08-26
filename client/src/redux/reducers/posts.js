@@ -1,15 +1,17 @@
 // eslint-disable-next-line
+import postTypes from "../constants/postTypes";
+
 export default (posts = [], action) => {
   switch (action.type) {
-    case "FETCH_ALL":
+    case postTypes.FETCH_ALL:
       return action.payload;
-    case "CREATE":
+    case postTypes.CREATE:
       return [...posts, action.payload];
-    case "UPDATE":
+    case postTypes.UPDATE:
       return posts.map(post => post._id === action.payload._id ? action.payload : post);
-    case "LIKE_POST":
+    case postTypes.LIKE_POST:
       return posts.map(post => post._id === action.payload._id ? action.payload : post);
-    case "DELETE":
+    case postTypes.DELETE:
       return posts.filter(post => post._id !== action.payload)
     default:
       return posts

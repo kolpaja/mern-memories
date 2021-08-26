@@ -20,17 +20,17 @@ function Form({ currentId, setCurrentId }) {
     e.preventDefault();
 
     if (currentId) {
-      console.log(`updating post with id: ${currentId}`)
+      // console.log(`updating post with id: ${currentId}`)
       dispatch(updatePost(currentId, postData));
     } else dispatch(createPost(postData));
 
-    console.log("form submit,", postData);
+    // console.log("form submit,", postData);
     setPostData({ creator: "", title: "", tags: "", selectedFile: "", message: "", });
   };
 
   const clear = () => {
     setPostData({ creator: "", title: "", tags: "", selectedFile: "", message: "", });
-    console.log("clear form: ", postData)
+    // console.log("clear form: ", postData)
   };
 
   return (

@@ -6,7 +6,7 @@ import postTypes from "../constants/postTypes"
 export const getPosts = () => async (dispatch) => {
   try {
     const { data } = await api.fetchPosts();
-    console.log("FETCH_ALL:, ", data)
+    // console.log("FETCH_ALL:, ", data)
     dispatch({
       type: postTypes.FETCH_ALL, payload: data
     })
