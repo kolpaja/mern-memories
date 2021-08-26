@@ -9,12 +9,16 @@ const app = express();
 
 
 
-// Express usesage
+// Express use sage
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 //Routing
 app.use("/posts", postRoutes)
+
+app.get('/', (req, res) => {
+  res.send("hello welcome to Memories API")
+})
 
 
 //Mongo db connection config with Mongoose
